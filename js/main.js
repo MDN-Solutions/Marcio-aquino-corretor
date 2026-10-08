@@ -94,12 +94,22 @@
       <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=${uploads}&rel=0" title="Últimos vídeos do canal" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
       </div><h3>Últimos vídeos do canal</h3></article>`;
   } else $("#lista-videos").innerHTML = VIDEOS.map((v) => {
-    const thumb = v.id ? `<img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="Miniatura do vídeo: ${esc(v.titulo)}" loading="lazy" width="480" height="360">` : "";
+    // Miniatura: imagem própria (v.thumb) ou a capa do YouTube em alta (maxres), com fallback para hqdefault
+    const thumbSrc = v.thumb || (v.id && `https://i.ytimg.com/vi/${v.id}/maxresdefault.jpg`);
+    const thumb = thumbSrc ? `<img class="video__thumb" src="${esc(thumbSrc)}" alt="Miniatura do vídeo: ${esc(v.titulo)}" loading="lazy" width="1280" height="720" data-yt="${esc(v.id || "")}">` : "";
     const action = v.id
       ? `<button class="video__play" data-id="${esc(v.id)}" aria-label="Assistir: ${esc(v.titulo)}"><i></i></button>`
       : `<a class="video__play" href="${CONFIG.youtube}" target="_blank" rel="noopener" aria-label="Ver no YouTube: ${esc(v.titulo)}"><i></i></a>`;
     return `<article class="video reveal"><div class="video__frame">${thumb}${action}</div><h3>${esc(v.titulo)}</h3></article>`;
   }).join("");
+  $$("#lista-videos .video__thumb").forEach((img) => {
+    const fallback = () => {
+      if (img.dataset.yt && !img.src.includes("hqdefault")) img.src = `https://i.ytimg.com/vi/${img.dataset.yt}/hqdefault.jpg`;
+    };
+    img.addEventListener("error", fallback);
+    // O YouTube devolve uma imagem cinza de 120px quando não existe capa maxres
+    img.addEventListener("load", () => { if (img.naturalWidth <= 120) fallback(); });
+  });
   $$("#lista-videos .reveal").forEach(observe);
   $("#lista-videos").addEventListener("click", (e) => {
     const btn = e.target.closest("button[data-id]");

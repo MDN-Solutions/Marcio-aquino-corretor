@@ -64,6 +64,8 @@ const IMOVEIS = [
    VÍDEOS DO YOUTUBE (opcional se youtubeCanalId estiver preenchido) — cole o ID do vídeo (o trecho depois de "v=" na URL).
    Ex.: https://www.youtube.com/watch?v=AbCdEf12345  →  id: "AbCdEf12345"
    Enquanto o id estiver vazio, o card leva para o canal.
+   A miniatura vem do próprio YouTube. Para usar outra imagem, adicione
+   thumb: "assets/minha-capa.jpg" no item.
    --------------------------------------------------------------------- */
 const VIDEOS = [
   { id: "uvAUUduP6ws", titulo: "Tour pelo imóvel — vídeo completo" },  // https://youtu.be/uvAUUduP6ws
