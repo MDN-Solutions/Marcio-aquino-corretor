@@ -66,9 +66,9 @@ const IMOVEIS = [
    Enquanto o id estiver vazio, o card leva para o canal.
    --------------------------------------------------------------------- */
 const VIDEOS = [
-  { id: "", titulo: "Último vídeo do canal" },
-  { id: "", titulo: "Penúltimo vídeo do canal" },
-  { id: "", titulo: "Antepenúltimo vídeo do canal" },
+  { id: "uvAUUduP6ws", titulo: "Tour pelo imóvel — vídeo completo" },  // https://youtu.be/uvAUUduP6ws
+  { id: "MGcLIyNYHQU", titulo: "Tour pelo imóvel — vídeo completo" },  // https://youtu.be/MGcLIyNYHQU
+  { id: "D1x7YeS9GII", titulo: "Tour pelo imóvel — vídeo completo" },  // https://youtu.be/D1x7YeS9GII
 ];
 
 /* ---------------------------------------------------------------------

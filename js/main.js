@@ -94,7 +94,7 @@
       <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=${uploads}&rel=0" title="Últimos vídeos do canal" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
       </div><h3>Últimos vídeos do canal</h3></article>`;
   } else $("#lista-videos").innerHTML = VIDEOS.map((v) => {
-    const thumb = v.id ? `<img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="" loading="lazy">` : "";
+    const thumb = v.id ? `<img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="Miniatura do vídeo: ${esc(v.titulo)}" loading="lazy" width="480" height="360">` : "";
     const action = v.id
       ? `<button class="video__play" data-id="${esc(v.id)}" aria-label="Assistir: ${esc(v.titulo)}"><i></i></button>`
       : `<a class="video__play" href="${CONFIG.youtube}" target="_blank" rel="noopener" aria-label="Ver no YouTube: ${esc(v.titulo)}"><i></i></a>`;
