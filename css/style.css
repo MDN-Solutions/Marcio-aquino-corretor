@@ -79,7 +79,7 @@ button, input, select { font: inherit; }
 .header__inner { display: flex; align-items: center; justify-content: space-between; height: 76px; max-width: 1240px; margin: 0 auto; padding: 0 var(--gutter); }
 .header.is-solid { background: rgba(255,255,255,.97); color: var(--navy); box-shadow: 0 1px 0 var(--line); backdrop-filter: blur(8px); }
 .brand { display: flex; align-items: center; gap: 12px; }
-.brand img { width: 46px; height: 46px; border-radius: 50%; }
+.brand img { width: 54px; height: 54px; border-radius: 50%; }
 .brand__text { display: flex; flex-direction: column; line-height: 1.15; }
 .brand__text strong { font: 500 1.3rem/1.1 var(--serif); letter-spacing: .02em; }
 .brand__text small { font-size: .62rem; letter-spacing: .26em; text-transform: uppercase; opacity: .8; }
@@ -256,6 +256,10 @@ button, input, select { font: inherit; }
 /* ---------- Contato ---------- */
 .contact__grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 48px; }
 .contact__grid > div > p { color: var(--muted); }
+.contact__address { font-style: normal; color: var(--ink); margin: -12px 0 36px; line-height: 1.7; }
+.contact__address .eyebrow { display: flex; margin-bottom: 10px; }
+.contact__address a { display: inline-block; margin-top: 6px; color: var(--navy); border-bottom: 1px solid var(--gold); font-size: .85rem; }
+.videos__row--playlist { grid-auto-flow: row; grid-template-columns: minmax(0, 1fr); max-width: 960px; margin: 0 auto; overflow: visible; }
 .contact__buttons { display: flex; flex-wrap: wrap; gap: 12px; margin: 26px 0 40px; }
 .form { display: grid; gap: 18px; background: var(--white); padding: 32px 24px; border: 1px solid var(--line); }
 .form label { display: grid; gap: 6px; font-size: .7rem; letter-spacing: .2em; text-transform: uppercase; color: var(--navy); font-weight: 500; }

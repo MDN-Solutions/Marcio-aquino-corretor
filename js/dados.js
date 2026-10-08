@@ -6,7 +6,12 @@ const CONFIG = {
   whatsapp: "558198784049",          // somente números, com DDI 55 + DDD
   telefone2: "5581987396956",
   instagram: "https://www.instagram.com/corretor_paulista",
-  youtube: "https://www.youtube.com/@MarcioAquino-g2g",
+  youtube: "https://www.youtube.com/@corretor_paulistape",
+  // ID do canal (começa com "UC"). Com ele preenchido, a seção de vídeos mostra
+  // automaticamente os últimos vídeos publicados, sem precisar editar nada depois.
+  // Como achar: YouTube → seu canal → "Mais sobre este canal" → "Compartilhar canal" → "Copiar ID do canal".
+  youtubeCanalId: "",
+  tiktok: "https://www.tiktok.com/@corretor_paulista",
   facebook: "https://www.facebook.com/corretorpaulista/",
 };
 
@@ -56,14 +61,14 @@ const IMOVEIS = [
 ];
 
 /* ---------------------------------------------------------------------
-   VÍDEOS DO YOUTUBE — cole o ID do vídeo (o trecho depois de "v=" na URL).
+   VÍDEOS DO YOUTUBE (opcional se youtubeCanalId estiver preenchido) — cole o ID do vídeo (o trecho depois de "v=" na URL).
    Ex.: https://www.youtube.com/watch?v=AbCdEf12345  →  id: "AbCdEf12345"
    Enquanto o id estiver vazio, o card leva para o canal.
    --------------------------------------------------------------------- */
 const VIDEOS = [
-  { id: "", titulo: "Tour completo — Casa no Janga" },
-  { id: "", titulo: "Tour completo — Casa de praia em Pau Amarelo" },
-  { id: "", titulo: "Tour completo — Apartamento vista mar" },
+  { id: "", titulo: "Último vídeo do canal" },
+  { id: "", titulo: "Penúltimo vídeo do canal" },
+  { id: "", titulo: "Antepenúltimo vídeo do canal" },
 ];
 
 /* ---------------------------------------------------------------------

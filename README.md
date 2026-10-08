@@ -6,8 +6,8 @@ Landing page estática (HTML + CSS + JS puro, sem build). Basta abrir `index.htm
 
 | O quê | Onde |
 |---|---|
-| Imóveis (fictícios por enquanto), vídeos do YouTube, depoimentos | `js/dados.js` |
-| Logo (selo provisório) | substituir `assets/logo-corretor-paulista.svg` pelo selo oficial recortado em círculo (se for PNG, troque também as referências em `index.html`) |
+| Imóveis (fictícios por enquanto), vídeos do YouTube (`youtubeCanalId` mostra os últimos vídeos automaticamente), depoimentos | `js/dados.js` |
+| Logo | `assets/logo-corretor-paulista.webp` (site), `.png` (SEO/compartilhamento) e `assets/favicon.png` |
 | Foto da seção "Minha História" | `index.html`, seção `#historia` (ex.: `assets/marcio.jpg`) |
 | Marcos da carreira (primeira venda, valores...) | `index.html`, bloco `BLOCO EDITÁVEL — MARCOS DA CARREIRA` |
 | Domínio usado no SEO (canonical / JSON-LD) | `index.html`, `<head>` — hoje `www.corretorpaulista.com.br` (placeholder) |

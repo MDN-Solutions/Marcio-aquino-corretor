@@ -84,7 +84,16 @@
   render();
 
   /* ---------- Vídeos do YouTube (carregamento sob demanda) ---------- */
-  $("#lista-videos").innerHTML = VIDEOS.map((v) => {
+  const temIds = VIDEOS.some((v) => v.id);
+  if (!temIds && /^UC[\w-]{22}$/.test(CONFIG.youtubeCanalId || "")) {
+    // Playlist de uploads do canal: sempre mostra os vídeos mais recentes
+    const uploads = "UU" + CONFIG.youtubeCanalId.slice(2);
+    const row = $("#lista-videos");
+    row.classList.add("videos__row--playlist");
+    row.innerHTML = `<article class="video reveal"><div class="video__frame">
+      <iframe src="https://www.youtube-nocookie.com/embed/videoseries?list=${uploads}&rel=0" title="Últimos vídeos do canal" loading="lazy" allow="encrypted-media; picture-in-picture" allowfullscreen></iframe>
+      </div><h3>Últimos vídeos do canal</h3></article>`;
+  } else $("#lista-videos").innerHTML = VIDEOS.map((v) => {
     const thumb = v.id ? `<img src="https://i.ytimg.com/vi/${esc(v.id)}/hqdefault.jpg" alt="" loading="lazy">` : "";
     const action = v.id
       ? `<button class="video__play" data-id="${esc(v.id)}" aria-label="Assistir: ${esc(v.titulo)}"><i></i></button>`
